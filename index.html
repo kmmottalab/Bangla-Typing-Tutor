@@ -6,152 +6,143 @@
 <title>বাংলা টাইপিং একাডেমি — আল্ট্রা ম্যাক্স প্রো</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ==================== WATERMARK ==================== -->
-<div class="watermark-layer">
-  <div class="watermark wm-1">MOTTALAB MIA</div>
-  <div class="watermark wm-2">MOTTALAB MIA</div>
-  <div class="watermark wm-3">MOTTALAB MIA</div>
-  <div class="watermark wm-4">MOTTALAB MIA</div>
-  <div class="watermark wm-5">MOTTALAB MIA</div>
-  <div class="watermark wm-6">MOTTALAB MIA</div>
-  <div class="watermark wm-7">MOTTALAB MIA</div>
-  <div class="watermark wm-8">MOTTALAB MIA</div>
+<!-- ===== WATERMARK (স্পষ্টভাবে দৃশ্যমান) ===== -->
+<div class="watermark-layer" aria-hidden="true">
+  <span class="wm" style="top:5%;left:2%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:18%;right:2%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:32%;left:5%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:46%;right:5%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:60%;left:2%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:74%;right:3%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:88%;left:6%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:12%;left:40%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:55%;left:45%;">MOTTALAB MIA</span>
+  <span class="wm" style="top:80%;left:35%;">MOTTALAB MIA</span>
 </div>
 
-<!-- ==================== ANIMATED BG ==================== -->
-<div class="bg-anim">
+<!-- ===== BG ORBS ===== -->
+<div class="bg-anim" aria-hidden="true">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
 </div>
 
-<!-- ==================== NAVBAR ==================== -->
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-dark glass-nav sticky-top">
-  <div class="container-fluid px-4">
-    <a class="navbar-brand fw-bold glow-text" href="#">
-      <span class="brand-icon">⌨</span> বাংলা টাইপিং একাডেমি
+  <div class="container-fluid px-3 px-lg-4">
+    <a class="navbar-brand fw-bold" href="#">
+      <i class="bi bi-keyboard-fill"></i> বাংলা টাইপিং
       <span class="badge badge-ultra">ULTRA MAX PRO</span>
     </a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
-        <li class="nav-item"><a class="nav-link nav-pill active" href="#dashboard" data-bs-toggle="tab"><i class="bi bi-speedometer2"></i> ড্যাশবোর্ড</a></li>
-        <li class="nav-item"><a class="nav-link nav-pill" href="#lessons" data-bs-toggle="tab"><i class="bi bi-journal-bookmark"></i> লেসন</a></li>
-        <li class="nav-item"><a class="nav-link nav-pill" href="#exam" data-bs-toggle="tab"><i class="bi bi-trophy"></i> পরীক্ষা</a></li>
-        <li class="nav-item"><a class="nav-link nav-pill" href="#keyboard" data-bs-toggle="tab"><i class="bi bi-keyboard"></i> কীবোর্ড</a></li>
-        <li class="nav-item"><a class="nav-link nav-pill" href="#game" data-bs-toggle="tab"><i class="bi bi-controller"></i> গেম</a></li>
-        <li class="nav-item"><a class="nav-link nav-pill" href="#stats" data-bs-toggle="tab"><i class="bi bi-bar-chart-line"></i> পরিসংখ্যান</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-pill dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-gear-fill"></i></a>
-          <ul class="dropdown-menu dropdown-menu-end glass-menu">
-            <li><a class="dropdown-item" href="#" onclick="app.toggleTheme()"><i class="bi bi-moon-stars"></i> থিম টগল</a></li>
-            <li><a class="dropdown-item" href="#" onclick="app.toggleSound()"><i class="bi bi-volume-up"></i> সাউন্ড: <span id="soundState">চালু</span></a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#" onclick="app.exportProgress()"><i class="bi bi-download"></i> প্রোগ্রেস এক্সপোর্ট</a></li>
-            <li><a class="dropdown-item text-danger" href="#" onclick="app.resetProgress()"><i class="bi bi-trash"></i> রিসেট</a></li>
-          </ul>
-        </li>
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><button class="nav-btn active" data-tab="dashboard"><i class="bi bi-speedometer2"></i> ড্যাশবোর্ড</button></li>
+        <li class="nav-item"><button class="nav-btn" data-tab="lessons"><i class="bi bi-journal-bookmark"></i> লেসন</button></li>
+        <li class="nav-item"><button class="nav-btn" data-tab="typing"><i class="bi bi-pencil-square"></i> টাইপিং</button></li>
+        <li class="nav-item"><button class="nav-btn" data-tab="exam"><i class="bi bi-trophy"></i> পরীক্ষা</button></li>
+        <li class="nav-item"><button class="nav-btn" data-tab="keyboard"><i class="bi bi-keyboard"></i> কীবোর্ড</button></li>
+        <li class="nav-item"><button class="nav-btn" data-tab="game"><i class="bi bi-controller"></i> গেম</button></li>
+        <li class="nav-item"><button class="nav-btn" data-tab="stats"><i class="bi bi-bar-chart-line"></i> পরিসংখ্যান</button></li>
+        <li class="nav-item"><button class="nav-btn" id="themeBtn"><i class="bi bi-moon-stars"></i></button></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container-fluid px-3 px-lg-5 my-4 position-relative z-1">
-<div class="tab-content">
+<!-- ===== MAIN ===== -->
+<main class="container-fluid px-3 px-lg-4 my-4">
 
-  <!-- ==================== DASHBOARD ==================== -->
-  <div class="tab-pane fade show active" id="dashboard">
-    <div class="hero-banner glass p-4 p-lg-5 mb-4">
+  <!-- DASHBOARD -->
+  <section class="page active" id="page-dashboard">
+    <div class="glass hero p-4 p-lg-5 mb-4">
       <div class="row align-items-center">
         <div class="col-lg-8">
-          <h1 class="display-5 fw-bold glow-text mb-2">আল্ট্রা ম্যাক্স প্রো টাইপিং</h1>
-          <p class="lead mb-3 opacity-90">১০০+ লেসন • ৬টি কীবোর্ড লেআউট • রিয়েল-টাইম বিশ্লেষণ • গেম মোড</p>
-          <button class="btn btn-ultra btn-lg" onclick="app.openLesson(1)">
+          <h1 class="glow-text mb-2">আল্ট্রা ম্যাক্স প্রো টাইপিং</h1>
+          <p class="lead mb-3">১০০+ লেসন • ৬টি কীবোর্ড • রিয়েল-টাইম বিশ্লেষণ • গেম মোড</p>
+          <button class="btn btn-ultra" onclick="app.openLesson(1)">
             <i class="bi bi-play-fill"></i> শুরু করুন
           </button>
-          <button class="btn btn-outline-light btn-lg ms-2" onclick="app.dailyChallenge()">
+          <button class="btn btn-outline-light ms-2" onclick="app.dailyChallenge()">
             <i class="bi bi-lightning-charge"></i> ডেইলি চ্যালেঞ্জ
           </button>
         </div>
         <div class="col-lg-4 text-center d-none d-lg-block">
-          <div class="hero-icon">⌨️</div>
+          <div class="hero-emoji">⌨️</div>
         </div>
       </div>
     </div>
 
     <div class="row g-3 mb-4">
-      <div class="col-6 col-md-3"><div class="stat-card glass stat-primary"><i class="bi bi-speedometer2"></i><h3 id="statWPM">0</h3><small>WPM গতি</small></div></div>
-      <div class="col-6 col-md-3"><div class="stat-card glass stat-success"><i class="bi bi-bullseye"></i><h3 id="statAccuracy">0%</h3><small>নির্ভুলতা</small></div></div>
-      <div class="col-6 col-md-3"><div class="stat-card glass stat-warning"><i class="bi bi-trophy-fill"></i><h3 id="statCompleted">0/100</h3><small>লেসন সম্পন্ন</small></div></div>
-      <div class="col-6 col-md-3"><div class="stat-card glass stat-danger"><i class="bi bi-fire"></i><h3 id="statStreak">0</h3><small>দিন স্ট্রিক</small></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card glass"><i class="bi bi-speedometer2 c1"></i><h3 id="statWPM">0</h3><small>WPM গতি</small></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card glass"><i class="bi bi-bullseye c2"></i><h3 id="statAccuracy">0%</h3><small>নির্ভুলতা</small></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card glass"><i class="bi bi-trophy-fill c3"></i><h3 id="statCompleted">0/100</h3><small>সম্পন্ন</small></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card glass"><i class="bi bi-fire c4"></i><h3 id="statStreak">0</h3><small>স্ট্রিক</small></div></div>
     </div>
 
     <div class="row g-3">
       <div class="col-lg-8"><div class="glass p-3"><h5><i class="bi bi-graph-up-arrow"></i> অগ্রগতি</h5><canvas id="progressChart" height="120"></canvas></div></div>
       <div class="col-lg-4"><div class="glass p-3"><h5><i class="bi bi-award-fill"></i> ব্যাজ</h5><div id="badgesArea" class="d-flex flex-wrap gap-2"></div></div></div>
     </div>
-  </div>
+  </section>
 
-  <!-- ==================== LESSONS ==================== -->
-  <div class="tab-pane fade" id="lessons">
+  <!-- LESSONS -->
+  <section class="page" id="page-lessons">
     <div class="glass p-3 mb-3">
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h3 class="mb-0"><i class="bi bi-journal-bookmark-fill"></i> লেসন তালিকা <span class="badge bg-primary" id="lessonCount">0</span></h3>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+        <h4 class="mb-0"><i class="bi bi-journal-bookmark-fill"></i> লেসন <span class="badge bg-primary" id="lessonCount">0</span></h4>
         <div class="d-flex flex-wrap gap-1">
-          <button class="btn btn-filter active" data-f="all" onclick="app.filterLessons('all',this)">সব</button>
-          <button class="btn btn-filter" data-f="borno" onclick="app.filterLessons('borno',this)">বর্ণ</button>
-          <button class="btn btn-filter" data-f="shobdo" onclick="app.filterLessons('shobdo',this)">শব্দ</button>
-          <button class="btn btn-filter" data-f="juktakkhor" onclick="app.filterLessons('juktakkhor',this)">যুক্তাক্ষর</button>
-          <button class="btn btn-filter" data-f="bakyo" onclick="app.filterLessons('bakyo',this)">বাক্য</button>
+          <button class="btn-filter active" data-f="all">সব</button>
+          <button class="btn-filter" data-f="borno">বর্ণ</button>
+          <button class="btn-filter" data-f="shobdo">শব্দ</button>
+          <button class="btn-filter" data-f="juktakkhor">যুক্তাক্ষর</button>
+          <button class="btn-filter" data-f="bakyo">বাক্য</button>
         </div>
       </div>
-      <div class="mt-2 d-flex gap-2">
-        <input type="search" id="lessonSearch" class="form-control" placeholder="🔍 লেসন খুঁজুন..." oninput="app.searchLessons(this.value)">
-      </div>
+      <input type="search" id="lessonSearch" class="form-control" placeholder="🔍 লেসন খুঁজুন...">
     </div>
     <div id="lessonsGrid" class="row g-3"></div>
-  </div>
+  </section>
 
-  <!-- ==================== TYPING ==================== -->
-  <div class="tab-pane fade" id="typing">
-    <div class="typing-wrap glass p-0 overflow-hidden">
-      <div class="typing-head d-flex flex-wrap justify-content-between align-items-center p-3">
+  <!-- TYPING -->
+  <section class="page" id="page-typing">
+    <div class="glass overflow-hidden">
+      <div class="typing-head p-3 d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div><i class="bi bi-pencil-square"></i> <strong id="lessonTitle">লেসন</strong></div>
         <div class="d-flex flex-wrap gap-2">
           <span class="chip"><i class="bi bi-clock"></i> <span id="timer">0:00</span></span>
-          <span class="chip chip-wpm"><i class="bi bi-lightning-fill"></i> <span id="wpm">0</span> WPM</span>
-          <span class="chip chip-acc"><i class="bi bi-check-circle-fill"></i> <span id="accuracy">100</span>%</span>
-          <span class="chip chip-err"><i class="bi bi-x-circle-fill"></i> <span id="errors">0</span></span>
+          <span class="chip c3"><i class="bi bi-lightning-fill"></i> <span id="wpm">0</span> WPM</span>
+          <span class="chip c2"><i class="bi bi-check-circle-fill"></i> <span id="accuracy">100</span>%</span>
+          <span class="chip c4"><i class="bi bi-x-circle-fill"></i> <span id="errors">0</span></span>
         </div>
       </div>
       <div class="p-3 p-lg-4">
         <div id="textDisplay" class="text-display mb-3"></div>
-        <textarea id="typeInput" class="form-control type-input mb-3" rows="3" placeholder="এখানে টাইপ করুন..." autofocus spellcheck="false"></textarea>
+        <textarea id="typeInput" class="form-control type-input mb-3" rows="3" placeholder="এখানে টাইপ করুন..." spellcheck="false"></textarea>
         <div class="d-flex flex-wrap gap-2 mb-3">
           <button class="btn btn-ultra" onclick="app.restartLesson()"><i class="bi bi-arrow-clockwise"></i> পুনরায়</button>
           <button class="btn btn-success" onclick="app.nextLesson()"><i class="bi bi-arrow-right"></i> পরবর্তী</button>
-          <button class="btn btn-outline-secondary" onclick="app.backToLessons()">← ফিরে যান</button>
-          <button class="btn btn-outline-info ms-auto" onclick="app.toggleLiveKb()"><i class="bi bi-keyboard"></i> কীবোর্ড</button>
+          <button class="btn btn-outline-light" onclick="app.showPage('lessons')">← ফিরে যান</button>
+          <button class="btn btn-outline-info ms-auto" onclick="app.toggleLiveKb()"><i class="bi bi-keyboard"></i> লাইভ কীবোর্ড</button>
         </div>
         <div class="progress glass-progress"><div id="lessonProgress" class="progress-bar bg-gradient-primary" style="width:0%"></div></div>
         <div id="liveKb" class="live-kb mt-3 d-none"></div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ==================== EXAM ==================== -->
-  <div class="tab-pane fade" id="exam">
+  <!-- EXAM -->
+  <section class="page" id="page-exam">
     <div class="glass p-4">
-      <h3><i class="bi bi-trophy-fill text-warning"></i> টাইপিং পরীক্ষা</h3>
-      <p class="opacity-75">আপনার গতি পরীক্ষা করুন। সময় বেছে নিন:</p>
+      <h3><i class="bi bi-trophy-fill c3"></i> টাইপিং পরীক্ষা</h3>
+      <p>সময় বেছে নিন:</p>
       <div class="d-flex flex-wrap gap-2 mb-3">
         <button class="btn btn-outline-warning" onclick="app.startExam(60)">১ মিনিট</button>
         <button class="btn btn-outline-warning" onclick="app.startExam(120)">২ মিনিট</button>
@@ -159,76 +150,78 @@
       </div>
       <div id="examArea"></div>
     </div>
-  </div>
+  </section>
 
-  <!-- ==================== KEYBOARD ==================== -->
-  <div class="tab-pane fade" id="keyboard">
+  <!-- KEYBOARD -->
+  <section class="page" id="page-keyboard">
     <div class="glass p-4">
-      <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
         <h3 class="mb-0"><i class="bi bi-keyboard-fill"></i> ভার্চুয়াল কীবোর্ড</h3>
-        <select id="kbLayoutSelect" class="form-select w-auto glass-input" onchange="app.setKeyboardLayout(this.value)">
-          <option value="avro">অভ্র (Avro)</option>
-          <option value="bijoy">বিজয় (Bijoy)</option>
-          <option value="jatiya">জাতীয় (Jatiya)</option>
-          <option value="inscript">ইনস্ক্রিপ্ট (Inscript)</option>
-          <option value="ridmik">রিদ্মিক (Ridmik)</option>
-          <option value="probhat">প্রভাত (Probhat)</option>
+        <select id="kbLayoutSelect" class="form-select w-auto glass-input">
+          <option value="avro">অভ্র</option>
+          <option value="bijoy">বিজয়</option>
+          <option value="jatiya">জাতীয়</option>
+          <option value="inscript">ইনস্ক্রিপ্ট</option>
+          <option value="ridmik">রিদ্মিক</option>
+          <option value="probhat">প্রভাত</option>
         </select>
       </div>
       <div id="virtualKeyboard" class="virtual-kb"></div>
       <div class="mt-3">
-        <label class="form-label">পরীক্ষা করুন — যেকোনো কী টাইপ করুন:</label>
+        <label class="form-label">টেস্ট করুন:</label>
         <input type="text" id="kbTestInput" class="form-control glass-input" placeholder="এখানে টাইপ করুন...">
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ==================== GAME ==================== -->
-  <div class="tab-pane fade" id="game">
+  <!-- GAME -->
+  <section class="page" id="page-game">
     <div class="glass p-4 text-center">
-      <h3><i class="bi bi-controller"></i> টাইপিং গেম মোড</h3>
-      <p class="opacity-75">শব্দ পড়ছে উপর থেকে — যত দ্রুত টাইপ করবেন তত পয়েন্ট!</p>
-      <button class="btn btn-ultra btn-lg mb-3" onclick="app.startGame()"><i class="bi bi-play-fill"></i> গেম শুরু</button>
-      <div id="gameArea" class="game-area glass"></div>
-      <div class="mt-3">স্কোর: <strong id="gameScore">0</strong> • লাইভ: <strong id="gameLives">3</strong> ❤️</div>
+      <h3><i class="bi bi-controller"></i> টাইপিং গেম</h3>
+      <p>নিচের ইনপুটে শব্দ টাইপ করে Enter চাপুন — পড়ন্ত শব্দ ধরা পড়বে!</p>
+      <button class="btn btn-ultra mb-3" onclick="app.startGame()"><i class="bi bi-play-fill"></i> গেম শুরু</button>
+      <button class="btn btn-outline-danger mb-3" onclick="app.stopGame()"><i class="bi bi-stop-fill"></i> থামান</button>
+      <div id="gameArea" class="game-area"></div>
+      <input type="text" id="gameInput" class="form-control mt-3 glass-input" placeholder="শব্দ টাইপ করে Enter চাপুন..." disabled>
+      <div class="mt-2">স্কোর: <strong id="gameScore">0</strong> • লাইভ: <strong id="gameLives">3</strong> ❤️</div>
     </div>
-  </div>
+  </section>
 
-  <!-- ==================== STATS ==================== -->
-  <div class="tab-pane fade" id="stats">
+  <!-- STATS -->
+  <section class="page" id="page-stats">
     <div class="glass p-4">
-      <h3><i class="bi bi-bar-chart-line-fill"></i> বিস্তারিত পরিসংখ্যান</h3>
+      <h3><i class="bi bi-bar-chart-line-fill"></i> পরিসংখ্যান</h3>
       <canvas id="detailedChart" height="120"></canvas>
       <div class="table-responsive mt-3">
-        <table class="table table-hover glass-table">
+        <table class="table glass-table">
           <thead><tr><th>লেসন</th><th>WPM</th><th>নির্ভুলতা</th><th>তারিখ</th></tr></thead>
           <tbody id="historyTable"></tbody>
         </table>
       </div>
+      <div class="d-flex gap-2 mt-3">
+        <button class="btn btn-outline-success" onclick="app.exportProgress()"><i class="bi bi-download"></i> এক্সপোর্ট</button>
+        <button class="btn btn-outline-danger" onclick="app.resetProgress()"><i class="bi bi-trash"></i> রিসেট</button>
+      </div>
     </div>
-  </div>
+  </section>
 
-</div>
-</div>
+</main>
 
-<!-- ==================== TOAST ==================== -->
-<div class="toast-container position-fixed bottom-0 end-0 p-3 z-3">
+<!-- ===== TOAST ===== -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:9999;">
   <div id="toast" class="toast glass-toast border-0">
     <div class="d-flex"><div class="toast-body" id="toastMsg"></div>
     <button class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div>
   </div>
 </div>
 
-<!-- ==================== FOOTER ==================== -->
-<footer class="text-center py-3 opacity-75 small">
-  © 2025 বাংলা টাইপিং একাডেমি — <span class="glow-text fw-bold">MOTTALAB MIA</span> • আল্ট্রা ম্যাক্স প্রো প্রো প্রো প্রো প্রো প্লাস
+<footer class="text-center py-3 small opacity-75">
+  © 2025 বাংলা টাইপিং একাডেমি — <strong class="glow-text">MOTTALAB MIA</strong> • আল্ট্রা ম্যাক্স প্রো
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/layouts.js"></script>
-<script src="js/lessons.js"></script>
-<script src="js/keyboard.js"></script>
-<script src="js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
